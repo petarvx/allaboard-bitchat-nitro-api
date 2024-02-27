@@ -9,7 +9,7 @@ const port = process.env.APP_PORT || 8080;
 
 const app = express();
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: "20mb" }));
 app.use(cors());
 
 app.get("/hcLogin", hcLogin);
